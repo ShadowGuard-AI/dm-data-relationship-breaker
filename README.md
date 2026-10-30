@@ -1,3 +1,5 @@
+![Banner](banner.png)
+
 # dm-data-relationship-breaker
 Identifies and breaks relationships between data points to prevent re-identification. For example, it could randomly reassign addresses to individuals within a city to eliminate direct linkages. - Focused on Tools designed to generate or mask sensitive data with realistic-looking but meaningless values
 
