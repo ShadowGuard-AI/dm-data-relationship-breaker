@@ -1,4 +1,5 @@
 import argparse
+import csv
 import logging
 import random
 import sys
@@ -63,6 +64,10 @@ def generate_fake_data(num_records, city, seed=None):
 
     if seed is not None:
         Faker.seed(seed)  # Seed the Faker instance for reproducible results
+        # The address shuffle in reassign_addresses draws from the random
+        # module, not from Faker. Seeding only Faker left seeded runs with
+        # different reassignments every time, so seed both generators.
+        random.seed(seed)
 
     data = []
     for _ in range(num_records):
@@ -102,7 +107,6 @@ def write_data_to_csv(data, output_file):
     """
     try:
         with open(output_file, "w", newline="") as csvfile:
-            import csv
             writer = csv.writer(csvfile)
             writer.writerow(["Name", "Address"])  # Write header row
             writer.writerows(data)  # Write data rows
