@@ -70,11 +70,20 @@ def generate_fake_data(num_records, city, seed=None):
         random.seed(seed)
 
     data = []
+    # I generate the records this tool works on; it never reads a real
+    # dataset. The names and addresses are invented in this loop, and only
+    # their pairing gets broken later. Anyone pointing this at a file of
+    # real people is holding the wrong tool.
     for _ in range(num_records):
         name = fake.name()
         address = fake.address()
         # Attempt to ensure the address appears relevant to the specified city
         # Note: Faker might still generate addresses outside the city, but this increases the likelihood.
+        # The check is a plain substring test, in this order: generation
+        # first, the shuffle later. An address that happens to contain the
+        # city name as part of another word passes untouched, and every
+        # address keeps whatever city text it ends up with through the
+        # reassignment, because that happens before the shuffle.
         if city.lower() not in address.lower(): #add city to address if it's not there
              address = address + ", " + city
         data.append((name, address))
@@ -92,6 +101,12 @@ def reassign_addresses(data):
     """
     addresses = [address for _, address in data]
     random.shuffle(addresses)  # Shuffle the addresses in place
+    # A shuffle is a permutation, not a guarantee. The multiset of addresses
+    # comes out exactly as it went in and the names never move; only the
+    # pairing changes. A plain shuffle can also leave an address sitting on
+    # its own original name by chance, and with one record it always does.
+    # I do not re-roll for that case, so a small run can contain untouched
+    # pairs and I would rather say so here than pretend otherwise.
     reassigned_data = []
     for i, (name, _) in enumerate(data):
         reassigned_data.append((name, addresses[i]))
@@ -125,6 +140,11 @@ def validate_input(args):
     Raises:
         ValueError: If any of the input arguments are invalid.
     """
+    # Half of these checks can never fire from the command line, because
+    # argparse already enforces the int and string types before this runs.
+    # They earn their place when main is bypassed and the namespace is built
+    # by hand. The empty string and positive count checks are the ones the
+    # CLI genuinely depends on.
     if not isinstance(args.city, str) or not args.city:
         raise ValueError("City must be a non-empty string.")
 
