@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" role="img" aria-label="Animated scene: postmark stamp and envelope row above, open volumes with ribbons in the middle, a citation slip sliding down a sorting chute below">
+  <rect x="0" y="0" width="1200" height="360" fill="#ded5b4"/>
+  <!-- Far band: composing frame, racked type slugs still; envelope row on pins -->
+  <rect x="0" y="0" width="1200" height="112" fill="#57503f"/>
+  <rect x="60" y="22" width="300" height="74" fill="#464034" stroke="#b08a36" stroke-width="3"/>
+  <g fill="#96948c" stroke="#28261f">
+    <rect x="74" y="32" width="24" height="18"/><rect x="106" y="32" width="24" height="18"/><rect x="138" y="32" width="24" height="18"/><rect x="170" y="32" width="24" height="18"/><rect x="202" y="32" width="24" height="18"/><rect x="234" y="32" width="24" height="18"/><rect x="266" y="32" width="24" height="18"/><rect x="298" y="32" width="24" height="18"/>
+    <rect x="74" y="56" width="24" height="18"/><rect x="106" y="56" width="24" height="18"/><rect x="138" y="56" width="24" height="18"/><rect x="170" y="56" width="24" height="18"/><rect x="202" y="56" width="24" height="18"/><rect x="234" y="56" width="24" height="18"/><rect x="266" y="56" width="24" height="18"/><rect x="298" y="56" width="24" height="18"/>
+  </g>
+  <rect x="470" y="18" width="660" height="8" fill="#183868"/>
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 0; -66 0; -66 0" keyTimes="0; 0.55; 0.62; 1" dur="6s" repeatCount="indefinite"/>
+    <g>
+      <rect x="486" y="34" width="56" height="40" fill="#eee6c8" stroke="#245696" stroke-width="2"/><circle cx="500" cy="48" r="7" fill="none" stroke="#96948c" stroke-width="2"/><circle cx="508" cy="30" r="4" fill="#b08a36"/>
+      <rect x="552" y="34" width="56" height="40" fill="#eee6c8" stroke="#245696" stroke-width="2"/><circle cx="566" cy="48" r="7" fill="none" stroke="#96948c" stroke-width="2"/><circle cx="574" cy="30" r="4" fill="#b08a36"/>
+      <rect x="618" y="34" width="56" height="40" fill="#eee6c8" stroke="#245696" stroke-width="2"/><circle cx="632" cy="48" r="7" fill="none" stroke="#96948c" stroke-width="2"/><circle cx="640" cy="30" r="4" fill="#b08a36"/>
+      <rect x="684" y="34" width="56" height="40" fill="#eee6c8" stroke="#245696" stroke-width="2"/><circle cx="698" cy="48" r="7" fill="none" stroke="#96948c" stroke-width="2"/><circle cx="706" cy="30" r="4" fill="#b08a36"/>
+      <rect x="750" y="34" width="56" height="40" fill="#eee6c8" stroke="#245696" stroke-width="2"/><circle cx="764" cy="48" r="7" fill="none" stroke="#96948c" stroke-width="2"/><circle cx="772" cy="30" r="4" fill="#b08a36"/>
+    </g>
+  </g>
+  <!-- Postmark stamp at the frame edge: comes down, lifts -->
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0 0; 0 26; 0 0; 0 0" keyTimes="0; 0.3; 0.5; 1" dur="6s" repeatCount="indefinite"/>
+    <rect x="492" y="0" width="10" height="18" fill="#7a5e3e"/>
+    <rect x="478" y="16" width="38" height="14" rx="3" fill="#b08a36" stroke="#8a6a26" stroke-width="2"/>
+  </g>
+  <!-- Middle band: open volumes, ribbons across the pages -->
+  <rect x="0" y="112" width="1200" height="118" fill="#6d5c3c"/>
+  <g>
+    <polygon points="120,138 330,124 330,214 120,226" fill="#eee6c8" stroke="#5c462c"/>
+    <polygon points="330,124 540,138 540,226 330,214" fill="#d6cca8" stroke="#5c462c"/>
+    <g stroke="#78766c" stroke-width="1.4">
+      <line x1="140" y1="150" x2="300" y2="140"/><line x1="140" y1="164" x2="290" y2="155"/><line x1="140" y1="178" x2="300" y2="170"/><line x1="360" y1="140" x2="520" y2="150"/><line x1="370" y1="155" x2="520" y2="164"/><line x1="360" y1="170" x2="510" y2="178"/>
+    </g>
+    <polygon points="196,214 210,214 220,262 206,266" fill="#96282c"/>
+    <polygon points="452,222 466,222 474,264 460,266" fill="#245696"/>
+  </g>
+  <g>
+    <polygon points="660,138 870,124 870,214 660,226" fill="#eee6c8" stroke="#5c462c"/>
+    <polygon points="870,124 1080,138 1080,226 870,214" fill="#d6cca8" stroke="#5c462c"/>
+    <g stroke="#78766c" stroke-width="1.4">
+      <line x1="680" y1="150" x2="840" y2="140"/><line x1="680" y1="164" x2="830" y2="155"/><line x1="890" y1="140" x2="1060" y2="150"/><line x1="900" y1="155" x2="1060" y2="164"/>
+    </g>
+    <!-- A page turns now and then; its ribbon slides a short way with it -->
+    <g>
+      <animateTransform attributeName="transform" type="rotate" values="0 870 214; -38 870 214; 0 870 214; 0 870 214" keyTimes="0; 0.18; 0.36; 1" dur="9s" repeatCount="indefinite"/>
+      <polygon points="870,130 1068,142 1068,220 870,208" fill="#e6dec2" stroke="#5c462c"/>
+    </g>
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0; -10 3; 0 0; 0 0" keyTimes="0; 0.18; 0.36; 1" dur="9s" repeatCount="indefinite"/>
+      <polygon points="986,216 1000,216 1008,258 994,260" fill="#96282c"/>
+    </g>
+    <polygon points="742,214 756,214 766,262 752,266" fill="#245696"/>
+  </g>
+  <!-- Near band: sorting chute and its slips -->
+  <rect x="0" y="230" width="1200" height="130" fill="#68543a"/>
+  <polygon points="120,252 760,300 760,318 120,270" fill="#58544c" stroke="#5c462c"/>
+  <polygon points="120,252 760,300 760,307 120,259" fill="#b08a36"/>
+  <!-- Growing pile at the foot of the chute -->
+  <g>
+    <rect x="742" y="306" width="190" height="26" fill="#d6cca8" stroke="#245696" stroke-width="2" transform="rotate(3 837 319)"/>
+    <rect x="748" y="296" width="190" height="26" fill="#eee6c8" stroke="#245696" stroke-width="2" transform="rotate(-2 843 309)"/>
+  </g>
+  <!-- One slip at a time releases, slides under gravity, lands askew -->
+  <g opacity="0">
+    <animate attributeName="opacity" values="0; 1; 1; 1; 0" keyTimes="0; 0.06; 0.5; 0.92; 1" dur="5s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="translate" values="0 0; 470 34; 500 40; 500 40" keyTimes="0; 0.55; 0.65; 1" dur="5s" repeatCount="indefinite"/>
+    <g transform="rotate(4 220 268)">
+      <rect x="128" y="252" width="184" height="34" fill="#eee6c8" stroke="#245696" stroke-width="2.4"/>
+      <line x1="146" y1="264" x2="282" y2="264" stroke="#245696" stroke-width="2"/>
+      <line x1="146" y1="276" x2="282" y2="276" stroke="#245696" stroke-width="2"/>
+    </g>
+  </g>
+  <circle cx="600" cy="240" r="2.4" fill="#fff8dc" opacity="0.7"/>
+  <circle cx="330" cy="252" r="2" fill="#fff8dc" opacity="0.6"/>
+  <circle cx="920" cy="246" r="2.2" fill="#fff8dc" opacity="0.6"/>
+</svg>
