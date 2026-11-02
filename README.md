@@ -18,14 +18,14 @@ Identifies and breaks relationships between data points to prevent re-identifica
 ![Major separator](sep-heavy.svg)
 
 ## Install
-`git clone https://github.com/ShadowStrikeHQ/dm-data-relationship-breaker`
+`git clone https://github.com/ShadowGuard-AI/dm-data-relationship-breaker`
 
-> Citation slip, pinned at the corner: the README install line names a predecessor organisation. The slip is transcribed as printed and left alone; the corrected address lives on the website, labelled as a correction there.
+> Citation slip, corrected in this wave: the install line formerly named a predecessor organisation; it now names ShadowGuard-AI.
 
 ![Minor separator](sep-light.svg)
 
 ## Usage
-`./dm-data-relationship-breaker [params]`
+`python3 main.py --city CITY --num_records N --output_file FILE.csv [--seed SEED]`
 
 > Citation slip, pinned at the corner: the live README carries no behaviour section at all, so no exit code and no write order exist in either record. None is invented here.
 
@@ -33,21 +33,21 @@ Identifies and breaks relationships between data points to prevent re-identifica
 
 ## Parameters
 - `-h`: Show help message and exit
-- `--city`: The city to reassign addresses within.
-- `--num_records`: The number of records to generate and reassign.
-- `--output_file`: No description provided
-- `--seed`: Optional seed for Faker
+- `--city`: The city to reassign addresses within. Required.
+- `--num_records`: The number of records to generate and reassign. Required.
+- `--output_file`: The file to write the anonymized data to (CSV format). Required.
+- `--seed`: Optional seed for Faker's random number generator for reproducibility. Defaults to no seed.
 
 > Citation slip, pinned at the corner: the example works inside one city only.
 
-> Citation slip, pinned at the corner: the output file control is printed with no description in the source, and it is carried exactly so.
+> Citation slip, corrected in this wave: the output file control formerly had no description; it now carries its CSV format and required status.
 
-> Citation slip, pinned at the corner: no default is printed for city or record count.
+> Citation slip, corrected in this wave: city and record count formerly had no stated status; both are now marked required, and seed is marked optional with no seed as its default.
 
 ![Minor separator](sep-light.svg)
 
 ## License
-Copyright (c) ShadowStrikeHQ
+This project is released under the license in the [LICENSE](LICENSE) file. See LICENSE for details.
 
 ![Major separator](sep-heavy.svg)
 
