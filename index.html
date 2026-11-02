@@ -1,166 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dm Data Relationship Breaker: what it is, how it runs, where it stops</title>
-<meta name="description" content="Dm Data Relationship Breaker is one of my projects. The README in the repo is short, so this page sticks to what the files themselves show.">
-<style>
-:root {
-  --bg: #1e2014; --panel: #2c2e1e; --ink: #eeecdc;
-  --mut: #3b3e28;
-  --acc: #ceb25c; --acc2: #b2603e;
-  --line: #2c2e1e;
-}
-* { box-sizing: border-box; }
-body { margin: 0; background: var(--bg); color: var(--ink);
-  font-family: ' Gill Sans', 'Segoe UI', sans-serif; line-height: 1.55; }
-code, pre, .mono { font-family: 'SF Mono', monospace; }
-a { color: var(--acc2); }
-.hero { padding: 3rem 6vw 1rem; }
-.hero img.banner { width: 100%; height: auto; border: 1px solid var(--line);
-  border-radius: 10px; }
-.logo { width: 92px; height: 92px; border-radius: 18px;
-  border: 1px solid var(--line); }
-h1 { font-size: 2.4rem; margin: 0.4em 0 0.1em; }
-h2 { border-bottom: 2px solid var(--acc); padding-bottom: 0.2em;
-  margin-top: 2em; }
-.lede { font-size: 1.15rem; max-width: 62ch; }
-main { padding: 0 6vw 3rem; max-width: 1180px; margin: 0 auto; }
-.grid { display: grid; gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
-.card { background: var(--panel); border: 1px solid var(--line);
-  border-radius: 12px; padding: 1rem 1.2rem; }
-.card.pop { animation: rise 0.7s ease both; }
-@keyframes rise { from { opacity: 0; transform: translateY(14px); }
-  to { opacity: 1; transform: none; } }
-pre.code { background: #101014; color: #e8e6df; padding: 1rem 1.2rem;
-  border-radius: 12px; overflow-x: auto; font-size: 0.86rem;
-  border-left: 5px solid var(--acc); }
-table { border-collapse: collapse; width: 100%; }
-td, th { border-bottom: 1px solid var(--line); padding: 0.45rem 0.6rem;
-  text-align: left; }
-.shots { display: grid; gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
-.shots img { width: 100%; height: auto; border: 1px solid var(--line);
-  border-radius: 10px; background: #f4f1e8; }
-footer { padding: 2rem 6vw; border-top: 1px solid var(--line);
-  color: var(--mut); }
-.rail { display: flex; gap: 1.2rem; align-items: flex-start; }
-.rail nav { position: sticky; top: 1rem; min-width: 180px; }
-@media (max-width: 760px) { .rail { flex-direction: column; }
-  .rail nav { position: static; } }
-@media (prefers-reduced-motion: reduce) {
-  .card.pop { animation: none; } * { scroll-behavior: auto; } }
-</style>
-</head>
-<body class="layout-note">
-<!-- This page exists for dm-data-relationship-breaker alone: the layout (notebook),
-     the colors, and the type were picked for this project, not
-     shared with the other project pages. The code block below is
-     copied from the file it names, line for line. If it looks
-     plain, that is because the project is plain, and I would
-     rather the page match the project than dress it up. The one
-     thing I will not do here is oversell: what this project does
-     not do is stated on the page, not hidden from it. -->
-<header class="hero">
-  <img class="logo" src="assets/logo.png" alt="Dm Data Relationship Breaker logo">
-  <img class="banner" src="assets/banner.png" alt="">
-  <h1>Dm Data Relationship Breaker</h1>
-  <p class="mono"><a href="https://github.com/ShadowGuard-AI/dm-data-relationship-breaker">github.com/ShadowGuard-AI/dm-data-relationship-breaker</a></p>
-</header>
+<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><title>dm-data-relationship-breaker: The Dictionary's Citation Slip Readers</title>
+<style>@font-face{font-family:Disp;src:url("fonts/Cambay-Bold.ttf")}@font-face{font-family:Text;src:url("fonts/Archivo.ttf")}
+body{background:#d6cca8;font-family:Text,sans-serif;color:#5c462c;margin:0}main{max-width:920px;margin:0 auto;padding:28px}
+h1,h2,h3{font-family:Disp,serif;color:#183868}section{background:#eee6c8;padding:18px 22px;margin:16px 0;border:2px solid #245696;border-left:6px solid #245696}
+img{max-width:100%}button{background:#eee6c8;color:#183868;border:2px solid #245696;padding:12px 22px;font-family:Disp,serif}
+button:hover{color:#0f2547}button:active{transform:translateY(2px)}button:focus{outline:3px double #245696;outline-offset:3px}
+a{color:#183868}a::before{content:"\25CF  ";color:#b08a36}.pin{color:#b08a36;font-family:Disp,serif}
+.label{display:inline-block;border:1px solid #245696;padding:2px 8px;font-size:13px}pre{white-space:pre-wrap;background:#f6f1de;padding:14px}code{font-family:Text,sans-serif}
+.absence{font-size:26px;font-family:Disp,serif;color:#183868}</style></head><body><main>
+<img src="intro-banner.png" alt="Introduction banner: one citation slip looming at a slant, turned corner casting a shadow, ribbons and marginalia behind, no writing">
+<h1>dm-data-relationship-breaker: The Dictionary's Citation Slip Readers</h1>
+<p>Wherever this site names itself, it uses the joined form dm-data-relationship-breaker: The Dictionary's Citation Slip Readers, repo first, theme second. The page is built as a sorting table read bundle by bundle, each plate a bundle opened in turn, with headings written as catalogue entries, author first, a small date stamp picture at the left, and the citation slip as section marker throughout.</p>
+<img src="logo.png" alt="Logo: a single citation slip, one corner turned down, two ruled lines empty, string tied off at the back, a brass pin head at the top edge"><img src="banner.png" alt="Wordmark banner: the dictionary reading room, sorting table with tied and burst slip bundles, the name printed on the belly band of the burst bundle">
+<img src="scene.svg" alt="Animated scene in three bands">
+<p><span class="pin">&#9679;</span> Brass pin count: seven plates on the table, one drawer of permission and credit.</p>
+<div><button type="button">Break the Linkages</button></div>
+<p><span class="label">City</span> <span class="label">Records to Generate and Reassign</span></p>
+<h3>Same City, New Pairings</h3>
+<section><h2>Plate one: the job</h2><p>The tool identifies and breaks relationships between data points to prevent re-identification. Its printed example moves addresses around among individuals inside one city until the direct pairings are gone. The plate keeps the family note the README prints at the end of its description: a tool among those that generate or mask sensitive data with realistic looking but meaningless values. No address appears anywhere on this site, in any plate, for any reason, and no name or record value is printed either.</p></section>
+<section><h2>Plate two: fetching, with the repair in the open</h2><p><code>git clone https://github.com/ShadowGuard-AI/dm-data-relationship-breaker</code></p><p>The line above is labelled a correction. The address printed in the README names a predecessor house, ShadowStrikeHQ, and following it literally sends the visitor to an organisation this repo no longer lives under. The corrected spelling is shown here in the open, with the reason beside it, and is never passed off as the README's own wording.</p></section>
+<section><h2>Plate three: the invocation shape</h2><p><code>./dm-data-relationship-breaker [params]</code></p><p>That shape is all the source gives: program first, bracketed parameters trailing. No city from anyone's records is set in the empty space on this plate.</p></section>
+<section><h2>Plate four: the controls in README order</h2><p>Help first: -h, the flag that shows the help message and exits. City next: --city, the city within which addresses are reassigned. Number of records next: --num_records, the count of records to generate and reassign. Output file next: --output_file, with the README's own admission printed beside it in full view: No description provided. Seed last: --seed, described in the README as an optional seed for Faker.</p></section>
+<section><h2>Plate five: the printed example, worked slowly</h2><p>Inside one city, addresses are shuffled among individuals at random. The person stays. The address moves. After the shuffle, an address no longer points back at the person who held it before, and the direct linkage the README names is gone. This plate works the example with shapes and arrows only. It prints no street, no number, no name.</p><p>Person &#8594; address held before the shuffle. Person &#8594; a different address after it. The pairing is cut the way a citation reader cuts a sentence free of its page.</p></section>
+<section><h2>Plate six: the seed, and the silences beside it</h2><p>The README calls the seed optional and ties it to Faker. It does not say what leaving the seed out changes, and this plate does not fill that silence in. Beside the seed, the plate notes the other silences a visitor will meet: no default is printed for city, for record count, or for output file.</p></section>
+<section><h2>Plate seven: the absence, at full size</h2><p class="absence">The live README carries NO behaviour section at all. No exit code exists in the record. No write order exists in the record. No failure behaviour is printed anywhere in the source.</p><p>This absence is printed at full size on purpose. Where a neighbouring record states how a program refuses, orders its writes, or reports a failure, this record is silent, and the site reports the silence rather than inventing a behaviour to fill it.</p></section>
+<section><h2>The drawer: permission and credit on separate slips</h2><p>One slip cites the standalone LICENSE file: MIT wording spanning 2025-2026, its proprietor given by outline only: a year span, a two word pen name, a bracketed given name with a lone initial, a bracketed handle led by an at sign. The line itself is not reproduced on this page.</p><p>The facing slip transcribes the README's parting credit, kept intact: Copyright (c) ShadowStrikeHQ. That house name belongs to the predecessor regime. A reader can compare the two slips in a glance. Permission is granted by the first slip. The second merely records who signed the older work, and a signature is not a grant. No third slip amalgamates them.</p></section>
+<section><h2>The preserved README record</h2><pre>![Banner](banner.png)
 
-<main>
-  <section class="rail">
-    <nav aria-label="on this page">
-      <p class="mono"><a href="#run">Run it</a><br>
-      <a href="#files">The files</a><br>
-      <a href="#sheets">The sheets</a><br>
-      <a href="https://github.com/ShadowGuard-AI/dm-data-relationship-breaker">The repo</a></p>
-    </nav>
-    <div>
-      <p class="lede">Dm Data Relationship Breaker is one of my projects. The README in the repo is short, so this page sticks to what the files themselves show.</p>
-      <div class="grid">
-        <div class="card pop"><h3>What it is</h3>
-          <p>Dm Data Relationship Breaker: 5 files, 196 counted
-          lines across Python 175, Markdown 20, Text 1. One job, done in the
-          open, in files you can read.</p></div>
-        <div class="card pop"><h3>The biggest piece</h3>
-          <p><code>main.py</code> carries the most
-          lines. If the project grows, that file is where the growth
-          lands first, for better or worse.</p></div>
-        <div class="card pop"><h3>The honest gap</h3>
-          <p>No test files yet. That is the honest gap, and the roadmap in the visuals folder says what the first one should cover.</p></div>
-      </div>
-      <section id="run">
-        <h2>Run it</h2>
-        <p>The repo README has the exact commands for this one. The
-        shape is the shape for most of my projects: clone it, read the
-        top file first so you know what will happen, then run it on
-        something you do not mind breaking.</p>
-        <p class="mono">$ git clone https://github.com/ShadowGuard-AI/dm-data-relationship-breaker.git<br>$ cd dm-data-relationship-breaker</p>
-      </section>
-      
-  <section aria-label="real code">
-    <h2>The code, as it sits in the repo</h2>
-    <p>From <code>main.py</code>, line 9 on. I did
-    not tidy it for the page. What you see is what the file has.</p>
-    <pre class="code"><code>logging.basicConfig(level=logging.INFO, format=&#x27;%(asctime)s - %(levelname)s - %(message)s&#x27;)
+# dm-data-relationship-breaker
+Identifies and breaks relationships between data points to prevent re-identification. For example, it could randomly reassign addresses to individuals within a city to eliminate direct linkages. - Focused on Tools designed to generate or mask sensitive data with realistic-looking but meaningless values
 
-def setup_argparse():
-    &quot;&quot;&quot;
-    Sets up the argument parser for the command-line interface.
-    &quot;&quot;&quot;
-    parser = argparse.ArgumentParser(
-        description=&quot;Breaks relationships between data points to prevent re-identification.&quot;
-    )
+## Install
+`git clone https://github.com/ShadowStrikeHQ/dm-data-relationship-breaker`
 
-    parser.add_argument(
-        &quot;--city&quot;,
-        type=str,
-        required=True,
-        help=&quot;The city to reassign addresses within.&quot;,
-    )
+## Usage
+`./dm-data-relationship-breaker [params]`
 
-    parser.add_argument(
-        &quot;--num_records&quot;,
-        type=int,
-        required=True,
-        help=&quot;The number of records to generate and reassign.&quot;,</code></pre>
-  </section>
-      <section id="files">
-        <h2>The files that matter</h2>
-        <table><tr><th>File</th><th>Lines</th></tr>
-        <tr><td><code>main.py</code></td><td>175</td></tr>
-        <tr><td><code>README.md</code></td><td>20</td></tr>
-        <tr><td><code>requirements.txt</code></td><td>1</td></tr>
-        <tr><td><code>banner.png</code></td><td>0</td></tr>
-        <tr><td><code>logo.png</code></td><td>0</td></tr>
-        </table>
-        <p>Names doing the work: <span class="mono">setup_argparse, generate_fake_data, reassign_addresses, write_data_to_csv, validate_input, main</span>.</p>
-      </section>
-      <section id="sheets">
-        <h2>Drawn by hand</h2>
-        <p>I sketch my projects on notebook paper so I have to
-        understand them well enough to draw them. The full set,
-        with the counts and how they were counted, is the
-        <a href="https://github.com/ShadowGuard-AI/dm-data-relationship-breaker/tree/main/dm-data-relationship-breaker-Visuals">dm-data-relationship-breaker-Visuals</a>
-        folder in the repo. Nothing is drawn over the binder holes.
-        That is a rule, not a style.</p>
-        <div class="shots">
-          <img src="assets/architecture.png" alt="Hand drawn architecture sheet for Dm Data Relationship Breaker">
-          <img src="assets/flowchart.png" alt="Hand drawn flowchart sheet for Dm Data Relationship Breaker">
-          <img src="assets/product-map.png" alt="Hand drawn product map sheet for Dm Data Relationship Breaker">
-        </div>
-      </section>
-    </div>
-  </section>
-</main>
-<footer>
-  <p>Dm Data Relationship Breaker is one of my projects. This page was written
-  from the repo itself on 2026-10-30: the counts are the
-  repo's counts, the code is the repo's code, and the gaps are the
-  repo's gaps.</p>
-</footer>
-</body>
-</html>
+## Parameters
+- `-h`: Show help message and exit
+- `--city`: The city to reassign addresses within.
+- `--num_records`: The number of records to generate and reassign.
+- `--output_file`: No description provided
+- `--seed`: Optional seed for Faker
+
+## License
+Copyright (c) ShadowStrikeHQ</pre></section>
+</main></body></html>
